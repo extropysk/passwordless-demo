@@ -12,38 +12,38 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "var(--border, #e5e5e5)",
+        input: "var(--input, #e5e5e5)",
+        ring: "var(--ring, #a3a3a3)",
+        background: "var(--background, #ffffff)",
+        foreground: "var(--foreground, #0a0a0a)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary, #171717)",
+          foreground: "var(--primary-foreground, #fafafa)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary, #f5f5f5)",
+          foreground: "var(--secondary-foreground, #171717)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--destructive, #ef4444)",
+          foreground: "var(--destructive-foreground, #fafafa)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "var(--muted, #f5f5f5)",
+          foreground: "var(--muted-foreground, #737373)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--accent, #f5f5f5)",
+          foreground: "var(--accent-foreground, #171717)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--popover, #ffffff)",
+          foreground: "var(--popover-foreground, #0a0a0a)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--card, #ffffff)",
+          foreground: "var(--card-foreground, #0a0a0a)",
         },
       },
       borderRadius: {
