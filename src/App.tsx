@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { getProperty } from "@/utils/ui";
 import { QRCodeSVG } from "qrcode.react";
 import { Button } from "./components/ui/button";
 import { useAuth } from "./hooks/useAuth";
@@ -34,8 +35,8 @@ function App() {
               className="m-auto"
               value={`lightning:${challenge.lnurl}`}
               size={128}
-              bgColor={"#000000"}
-              fgColor={"#ffffff"}
+              bgColor={getProperty("--background") || "#000000"}
+              fgColor={getProperty("--foreground") || "#ffffff"}
               level={"M"}
             />
           )}
