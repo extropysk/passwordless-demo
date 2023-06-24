@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,14 +9,23 @@ import {
 } from "@/components/ui/card";
 import { getProperty } from "@/utils/ui";
 import { QRCodeSVG } from "qrcode.react";
-import { Button } from "./components/ui/button";
 import { useAuth } from "./hooks/useAuth";
 
 function App() {
   const { challenge, token } = useAuth("https://passwordless.extropy.sk");
 
   if (token) {
-    return <div>{token.sub}</div>;
+    return (
+      <div className="flex justify-center p-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Welcome</CardTitle>
+            <CardDescription>{token.sub}</CardDescription>
+          </CardHeader>
+          <CardContent>✅ You are logged in.</CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
@@ -23,31 +33,31 @@ function App() {
       <Card>
         <CardHeader>
           <CardTitle>Passwordless</CardTitle>
-          <CardDescription>
-            Scan or click to login using your LN wallet
-          </CardDescription>
+          <CardDescription>powered by Extropy</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col items-center gap-4">
           {!challenge ? (
             <p>loading...</p>
           ) : (
-            <QRCodeSVG
-              className="m-auto"
-              value={`lightning:${challenge.lnurl}`}
-              size={128}
-              bgColor={getProperty("--background") || "#000000"}
-              fgColor={getProperty("--foreground") || "#ffffff"}
-              level={"M"}
-            />
+            <>
+              <a href={`lightning:${challenge.lnurl}`} target="_blank">
+                <QRCodeSVG
+                  value={`lightning:${challenge.lnurl}`}
+                  size={128}
+                  bgColor={getProperty("--background") || "#000000"}
+                  fgColor={getProperty("--foreground") || "#ffffff"}
+                  level={"M"}
+                />
+              </a>
+              <Button className="w-full" asChild>
+                <a href={`lightning:${challenge.lnurl}`} target="_blank">
+                  ⚡️ Click to connect
+                </a>
+              </Button>
+            </>
           )}
         </CardContent>
-        <CardFooter>
-          <Button className="w-full" asChild>
-            <a href={`lightning:${challenge?.lnurl}`} target="_blank">
-              ⚡️ Click to connect
-            </a>
-          </Button>
-        </CardFooter>
+        <CardFooter>Scan or click to login using your LN wallet</CardFooter>
       </Card>
     </div>
   );

@@ -12,9 +12,20 @@ interface Challenge {
   lnurl: string;
 }
 
+enum ErrorCode {
+  NotResponding = "NOT_RESPONDING",
+}
+
+interface Error {
+  code: ErrorCode;
+  message: string;
+}
+
 export function useAuth(url: string) {
   const [token, setToken] = useState<Token>();
   const [challenge, setChallenge] = useState<Challenge>();
+  const [error, setError] = useState<Error>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useDidMount(async () => {
     try {
@@ -29,8 +40,13 @@ export function useAuth(url: string) {
         });
         setChallenge(lnurl);
       } else {
-        console.error(error);
+        setError({
+          code: ErrorCode.NotResponding,
+          message: "Not responding, try again later.",
+        });
       }
+    } finally {
+      setIsLoading(false);
     }
   });
 
@@ -51,5 +67,5 @@ export function useAuth(url: string) {
     };
   }, [challenge?.k1, url]);
 
-  return { challenge, token };
+  return { challenge, token, error, isLoading };
 }
