@@ -17,7 +17,7 @@ jobs:
           node-version: "16"
           registry-url: "https://registry.npmjs.org"
       - run: yarn --frozen-lockfile
-      - run: yarn build
+      - run: yarn build-gh
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
