@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -6,13 +6,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { getProperty } from "@/utils/ui";
-import { QRCodeSVG } from "qrcode.react";
-import { useAuth } from "./hooks/useAuth";
+} from '@/components/ui/card'
+import { getProperty } from '@/utils/ui'
+import { useAuth } from '@extropysk/ln-hooks'
+import { QRCodeSVG } from 'qrcode.react'
 
 function App() {
-  const { challenge, token } = useAuth("https://passwordless.extropy.sk");
+  const { challenge, token } = useAuth('https://passwordless.extropy.sk')
 
   if (token) {
     return (
@@ -25,7 +25,7 @@ function App() {
           <CardContent>✅ You are logged in.</CardContent>
         </Card>
       </div>
-    );
+    )
   }
 
   return (
@@ -44,9 +44,9 @@ function App() {
                 <QRCodeSVG
                   value={`lightning:${challenge.lnurl}`}
                   size={128}
-                  bgColor={getProperty("--background") || "#000000"}
-                  fgColor={getProperty("--foreground") || "#ffffff"}
-                  level={"M"}
+                  bgColor={getProperty('--background') || '#000000'}
+                  fgColor={getProperty('--foreground') || '#ffffff'}
+                  level={'M'}
                 />
               </a>
               <Button className="w-full" asChild>
@@ -60,7 +60,7 @@ function App() {
         <CardFooter>Scan or click to login using your LN wallet</CardFooter>
       </Card>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
