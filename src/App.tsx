@@ -40,7 +40,11 @@ function App() {
             <p>loading...</p>
           ) : (
             <>
-              <a href={`lightning:${challenge.lnurl}`} target="_blank">
+              <a
+                href={`lightning:${challenge.lnurl}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <QRCodeSVG
                   value={`lightning:${challenge.lnurl}`}
                   size={128}
@@ -50,7 +54,11 @@ function App() {
                 />
               </a>
               <Button className="w-full" asChild>
-                <a href={`lightning:${challenge.lnurl}`} target="_blank">
+                <a
+                  href={`lightning:${challenge.lnurl}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   ⚡️ Click to connect
                 </a>
               </Button>
