@@ -12,7 +12,7 @@ import { useAuth } from '@extropysk/ln-hooks'
 import { QRCodeSVG } from 'qrcode.react'
 
 function App() {
-  const { challenge, token } = useAuth('https://passwordless.extropy.sk')
+  const { challenge, token } = useAuth()
 
   if (token) {
     return (

@@ -156,10 +156,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.43.0.tgz#559ca3d9ddbd6bf907ad524320a0d14b85586af0"
   integrity sha512-s2UHCoiXfxMvmfzqoN+vrQ84ahUSYde9qNO1MdxmoEhyHWsfmwOpFlwYV+ePJEVc7gFnATGUi376WowX1N7tFg==
 
-"@extropysk/ln-hooks@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@extropysk/ln-hooks/-/ln-hooks-0.0.3.tgz#e7417b61487aa28527e2c7d4ab9fcbc9e7cf4b6f"
-  integrity sha512-CXnW4+nqFNdOuU2Oco2gzojrcOK4wxKfgxf+qOyOt0aBuY+Ci7OEdvbLY00fw1GO8PSkNA7hkzUOs1AkoyD33w==
+"@extropysk/ln-hooks@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@extropysk/ln-hooks/-/ln-hooks-0.1.0.tgz#1110de1a925122e06c469ce9ef098d8544ec0e3e"
+  integrity sha512-0qW6Q7QYipcS1tSvPVg8p9q4ok9akSzu6MKW25dejOKx1YZQWMTk1YMD3E7Du8W+QkKm54N5hiqAh21BO2nVdg==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
