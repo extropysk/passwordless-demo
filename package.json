@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@extropysk/ln-hooks": "^0.1.0",
+    "@extropysk/ln-hooks": "^0.1.1",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
@@ -23,7 +23,7 @@
     "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
-    "@extropysk/eslint-config-react": "^0.1.2",
+    "@extropysk/eslint-config-react": "^0.1.4",
     "@types/node": "^20.3.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
