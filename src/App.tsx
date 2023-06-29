@@ -10,9 +10,16 @@ import {
 import { getProperty } from '@/utils/ui'
 import { useAuth } from '@extropysk/ln-hooks'
 import { QRCodeSVG } from 'qrcode.react'
+import { useEffect } from 'react'
 
 function App() {
-  const { challenge, token } = useAuth()
+  const { challenge, token, login } = useAuth()
+
+  useEffect(() => {
+    if (token === null) {
+      login()
+    }
+  }, [token, login])
 
   if (token) {
     return (
@@ -40,11 +47,7 @@ function App() {
             <p>loading...</p>
           ) : (
             <>
-              <a
-                href={`lightning:${challenge.lnurl}`}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={`lightning:${challenge.lnurl}`} target="_blank" rel="noreferrer">
                 <QRCodeSVG
                   value={`lightning:${challenge.lnurl}`}
                   size={128}
@@ -54,11 +57,7 @@ function App() {
                 />
               </a>
               <Button className="w-full" asChild>
-                <a
-                  href={`lightning:${challenge.lnurl}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={`lightning:${challenge.lnurl}`} target="_blank" rel="noreferrer">
                   ⚡️ Click to connect
                 </a>
               </Button>

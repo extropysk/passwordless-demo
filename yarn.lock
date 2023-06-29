@@ -171,10 +171,10 @@
     eslint-plugin-simple-import-sort "^7.0.0"
     prettier "^2.5.1"
 
-"@extropysk/ln-hooks@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@extropysk/ln-hooks/-/ln-hooks-0.1.1.tgz#3c42d6c67e2f4b336279380bf9901b982acc3eaa"
-  integrity sha512-QXZkP2BMYEpB5oWCF7UNHp31dKAYaSkFOEiHtu/9tEOAmEnzBjOK7kjZBC8x+lDiPsa/fcbM1tNd/jntTunaZg==
+"@extropysk/ln-hooks@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@extropysk/ln-hooks/-/ln-hooks-0.1.2.tgz#d2dbd82ef51f516c82e658679c32e9466bf6dba5"
+  integrity sha512-mXbJ7IU2num4AJ6so3m6vAdeD5NB1yW8orbrhI5Qv6ZZmXl6typxVqspTXEzWZOVl3uoSIjlQ0pxl7yTHyfpQA==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
