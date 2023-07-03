@@ -18,6 +18,8 @@ function App() {
   useEffect(() => {
     if (token === null) {
       login()
+    } else {
+      console.log(token)
     }
   }, [token, login])
 
