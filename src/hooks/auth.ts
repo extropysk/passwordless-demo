@@ -10,6 +10,7 @@ interface Token {
 interface Challenge {
   k1: string;
   lnurl: string;
+  id: string;
 }
 
 enum ErrorCode {
@@ -77,8 +78,8 @@ export function useAuth(options: Options = {}) {
 
   useEffect(() => {
     let eventSource: EventSource;
-    if (challenge?.k1) {
-      eventSource = new EventSource(`${url}/auth/sse/${challenge?.k1}`);
+    if (challenge) {
+      eventSource = new EventSource(`${url}/auth/sse/${challenge.id}`);
       eventSource.onmessage = async ({ data }) => {
         console.log(data);
         const token = await ajax<Token>(`${url}/auth/token`, {
@@ -91,7 +92,7 @@ export function useAuth(options: Options = {}) {
     return () => {
       eventSource?.close();
     };
-  }, [challenge?.k1, url, onSuccess]);
+  }, [challenge, url, onSuccess]);
 
   return { challenge, token, error, login, logout };
 }
