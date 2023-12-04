@@ -28,7 +28,7 @@ interface Options {
 }
 
 const DEFAULT_OPTIONS = {
-  url: "https://passwordless.extropy.sk",
+  url: "https://pwd.extropy.sk",
 };
 
 export function useAuth(options: Options = {}) {

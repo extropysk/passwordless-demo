@@ -41,7 +41,7 @@ function App() {
     <div className="flex justify-center p-4">
       <Card>
         <CardHeader>
-          <CardTitle>Passwordless</CardTitle>
+          <CardTitle>LN demo</CardTitle>
           <CardDescription>powered by Extropy</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center gap-4">
