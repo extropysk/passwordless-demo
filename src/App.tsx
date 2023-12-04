@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,22 +6,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { getProperty } from '@/utils/ui'
-import { useAuth } from '@extropysk/ln-hooks'
-import { QRCodeSVG } from 'qrcode.react'
-import { useEffect } from 'react'
+} from "@/components/ui/card";
+import { useAuth } from "@/hooks/auth";
+import { getProperty } from "@/utils/ui";
+import { QRCodeSVG } from "qrcode.react";
+import { useEffect } from "react";
 
 function App() {
-  const { challenge, token, login } = useAuth()
+  const { challenge, token, login } = useAuth();
 
   useEffect(() => {
     if (token === null) {
-      login()
+      login();
     } else {
-      console.log(token)
+      console.log(token);
     }
-  }, [token, login])
+  }, [token, login]);
 
   if (token) {
     return (
@@ -34,7 +34,7 @@ function App() {
           <CardContent>✅ You are logged in.</CardContent>
         </Card>
       </div>
-    )
+    );
   }
 
   return (
@@ -49,17 +49,25 @@ function App() {
             <p>loading...</p>
           ) : (
             <>
-              <a href={`lightning:${challenge.lnurl}`} target="_blank" rel="noreferrer">
+              <a
+                href={`lightning:${challenge.lnurl}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <QRCodeSVG
                   value={`lightning:${challenge.lnurl}`}
                   size={128}
-                  bgColor={getProperty('--background') || '#000000'}
-                  fgColor={getProperty('--foreground') || '#ffffff'}
-                  level={'M'}
+                  bgColor={getProperty("--background") || "#000000"}
+                  fgColor={getProperty("--foreground") || "#ffffff"}
+                  level={"M"}
                 />
               </a>
               <Button className="w-full" asChild>
-                <a href={`lightning:${challenge.lnurl}`} target="_blank" rel="noreferrer">
+                <a
+                  href={`lightning:${challenge.lnurl}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   ⚡️ Click to connect
                 </a>
               </Button>
@@ -69,7 +77,7 @@ function App() {
         <CardFooter>Scan or click to login using your LN wallet</CardFooter>
       </Card>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
